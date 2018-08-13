@@ -1,0 +1,3 @@
+﻿  Source.cpp
+d:\projects\summer_projects\c++_introduction\cpp_tutorial_4_type\ex2_unsafe_types\try_this_1\try_this_1\source.cpp(12): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  Try_This_1.vcxproj -> D:\Projects\Summer_Projects\C++_Introduction\CPP_Tutorial_4_Type\Ex2_Unsafe_Types\Try_This_1\Debug\Try_This_1.exe

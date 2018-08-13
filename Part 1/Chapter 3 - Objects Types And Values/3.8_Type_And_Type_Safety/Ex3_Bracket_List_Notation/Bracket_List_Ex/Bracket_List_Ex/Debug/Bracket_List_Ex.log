@@ -1,0 +1,5 @@
+﻿  Source.cpp
+d:\projects\summer_projects\c++_introduction\cpp_tutorial_4_type\ex3_bracket_list_notation\bracket_list_ex\bracket_list_ex\source.cpp(13): error C2397: conversion from 'double' to 'int' requires a narrowing conversion
+d:\projects\summer_projects\c++_introduction\cpp_tutorial_4_type\ex3_bracket_list_notation\bracket_list_ex\bracket_list_ex\source.cpp(17): error C2397: conversion from 'int' to 'char' requires a narrowing conversion
+d:\projects\summer_projects\c++_introduction\cpp_tutorial_4_type\ex3_bracket_list_notation\bracket_list_ex\bracket_list_ex\source.cpp(19): error C2397: conversion from 'int' to 'char' requires a narrowing conversion
+d:\projects\summer_projects\c++_introduction\cpp_tutorial_4_type\ex3_bracket_list_notation\bracket_list_ex\bracket_list_ex\source.cpp(19): warning C4309: 'initializing': truncation of constant value

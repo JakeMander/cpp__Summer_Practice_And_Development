@@ -1,0 +1,4 @@
+﻿  Source.cpp
+d:\projects\summer_projects\c++_introduction\part 1\chapter 3 - objects types and values\3.4_operators\ex_1_operator_examples\operator_examples\operator_examples\source.cpp(6): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+d:\projects\summer_projects\c++_introduction\part 1\chapter 3 - objects types and values\3.4_operators\ex_1_operator_examples\operator_examples\operator_examples\source.cpp(7): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  Operator_Examples.vcxproj -> D:\Projects\Summer_Projects\C++_Introduction\Part 1\Chapter 3 - Objects Types And Values\3.4_Operators\Ex_1_Operator_Examples\Operator_Examples\Debug\Operator_Examples.exe
