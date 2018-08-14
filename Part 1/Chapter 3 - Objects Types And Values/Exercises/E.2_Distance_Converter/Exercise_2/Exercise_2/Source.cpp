@@ -2,26 +2,46 @@
 
 	int main()
 	{
+		bool integer_check = true;
 		const double conversion_rate = 1.609;
-		double user_input = 0;
-		double distance_kilometers = user_input * conversion_rate;
+		double distance_miles = 0;
+		double distance_kilometers = 0;
+		string user_input = "";
 
-		cout << "\tThe Following Program Will Convert Miles To Kilometers\n"
-		     << "\n\tPlese Enter A Value In Miles (Enter A Letter To Exit): ";
-
-		while (cin >> user_input || user_input <= 0)
+		cout << "\tThe Following Program Will Convert Miles To Kilometers\n";
+		do
 		{
-			
-			if (user_input <= 0)
+			cout << "\n\tPlese Enter A Value In Miles (Enter A Letter Or Symbol To Exit): ";
+			cin >> user_input;
+
+			try
 			{
-				cout << "**Invalid Entry: Value Must Be Greater Than 0**";
+				distance_miles = stoi(user_input);
 			}
 
-			else
+			catch (const exception e)
 			{
-				cout << "Distance (Km): " << distance_kilometers;
+				cout << "\n\n\t**NON-INTEGER CHARACTER DETECTED**\n\n";
+				integer_check = false;
 			}
 
-		}
+			if (integer_check)
+			{
+				if (distance_miles <= 0)
+				{
+					cout << "\n\n**Invalid Entry: Value Must Be Greater Than 0**\n";
+				}
+
+				else
+				{
+					distance_kilometers = distance_miles * conversion_rate;
+					cout << "\tDistance (Km): " << distance_kilometers
+						<< "\n\t**********************************************************\n";
+				}
+			}
+		} while (integer_check);
+
+		cout << '\t';
+		keep_window_open();
 		return 0;
 	}
