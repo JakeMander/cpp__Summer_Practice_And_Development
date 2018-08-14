@@ -14,17 +14,21 @@
 			cout << "\n\tPlese Enter A Value In Miles (Enter A Letter Or Symbol To Exit): ";
 			cin >> user_input;
 
+			/*stod Will Throw An Exception When Non-Numeric Characters Are Passed In. Exception Will Be Used
+			  To Detect When User Exits Program*/
 			try
 			{
-				distance_miles = stoi(user_input);
+				distance_miles = stod(user_input);
 			}
 
+			//Non Numeric Character Is Passed. Exception Thrown And Validation Set To Exit do while Loop
 			catch (const exception e)
 			{
 				cout << "\n\n\t**NON-INTEGER CHARACTER DETECTED**\n\n";
 				integer_check = false;
 			}
 
+			//Bypass Calculation If String Is Non-Numeric
 			if (integer_check)
 			{
 				if (distance_miles <= 0)
