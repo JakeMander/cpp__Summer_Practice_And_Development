@@ -2,50 +2,45 @@
 
 	int main()
 	{
-		bool integer_check = true;
+		bool integer_check = false;
 		const double conversion_rate = 1.609;
 		double distance_miles = 0;
 		double distance_kilometers = 0;
 		string user_input = "";
+		stringstream validation_stream;
 
 		cout << "\tThe Following Program Will Convert Miles To Kilometers\n";
 		do
 		{
 			cout << "\n\tPlese Enter A Value In Miles (Enter A Letter Or Symbol To Exit): ";
-			cin >> user_input;
 
-			/*stod Will Throw An Exception When Non-Numeric Characters Are Passed In. Exception Will Be Used
-			  To Detect When User Exits Program*/
-			try
+			//Take user input and save to "cin" buffer. Move through "cin" buffer and pass each char to user_input until '\n' is reached.
+			getline(cin, user_input);
+
+			//Take whatever is stored in user_input and insert it into stringstream.
+			validation_stream.str(user_input);
+			
+			if (validation_stream >> distance_miles)
 			{
-				distance_miles = stod(user_input);
+				cout << "\t**stringstream Has Worked And Passed A Value Of:" << distance_miles << " **\n";
+				integer_check = true;
+				distance_kilometers = distance_miles * conversion_rate;
+				cout << "\n\tDistance in Kilometers Is: " << distance_kilometers;
+				cout << "\n\t**************************************************************************\n";
+				validation_stream.clear();
+				
 			}
 
-			//Non Numeric Character Is Passed. Exception Thrown And Validation Set To Exit do while Loop
-			catch (const exception e)
+			else
 			{
-				cout << "\n\n\t**NON-INTEGER CHARACTER DETECTED**\n\n";
+				cout << "\t** stringstream Has Passed A Non Numeric Value Of: " << validation_stream.str() << " **\n";
+				cout << "\n\t** EXITING PROGRAM **\n";
+				cout << "\t";
 				integer_check = false;
 			}
 
-			//Bypass Calculation If String Is Non-Numeric
-			if (integer_check)
-			{
-				if (distance_miles <= 0)
-				{
-					cout << "\n\n**Invalid Entry: Value Must Be Greater Than 0**\n";
-				}
-
-				else
-				{
-					distance_kilometers = distance_miles * conversion_rate;
-					cout << "\tDistance (Km): " << distance_kilometers
-						<< "\n\t**********************************************************\n";
-				}
-			}
 		} while (integer_check);
 
-		cout << '\t';
 		keep_window_open();
 		return 0;
 	}
